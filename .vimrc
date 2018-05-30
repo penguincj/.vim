@@ -78,6 +78,8 @@ Plugin 'fatih/vim-go'
 "Plugin 'tagbar'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 "minibufexp
 "Plugin 'fholgado/minibufexpl'
 
@@ -192,8 +194,9 @@ endif
 set guifont=Consolas\ Italic:h16
 "set lines=30 columns=120
 set number
-"set encoding=cp936
-set fileencodings=gbk,cp936,utf-8
+set encoding=utf-8
+set fileencodings=gbk,utf-8,cp936,cp932
+let &termencoding=&encoding
 set nocp
 set cindent
 
@@ -287,7 +290,7 @@ set virtualedit=all
 "set cursorline              " 突出显示当前行
 set ruler                   " 打开状态栏标尺
 "set autochdir               " 自动切换当前目录为当前文件所在的目录
-set ignorecase smartcase    " 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
+"set ignorecase smartcase    " 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
 set nowrap
 "set nowrapscan              " 禁止在搜索到文件两端时重新搜索
 set incsearch               " 输入搜索内容时就显示搜索结果
@@ -352,6 +355,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 map <leader>k :ccl<CR>
 nnoremap ; :
 
+set tags=tags;/
+
 "tagbar
 let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
 let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
@@ -400,7 +405,7 @@ let g:airline_powerline_fonts = 1
 " 映射切换buffer的键位
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
-nmap <c-i> :b#<cr>
+nmap <c-m> :b#<cr>
 " 查看buffers
 nnoremap <Leader>l :ls<CR>
 " 映射<leader>num到num buffer
@@ -461,7 +466,6 @@ imap <c-h> <Left>
 imap <c-l> <Right>
 "imap <c-k> <Up>
 "imap <c-j> <Down>
-imap <c-i> <ESC>
 imap <c-d> <Delete>
 
 nnoremap [p "0p
@@ -480,3 +484,18 @@ inoremap [ []<ESC>i
 inoremap { {<CR>}<ESC>O
 
 map <leader>h :nohls<CR>
+map <leader>p :pwd<CR>
+
+autocmd FileType html setlocal et sta sw=2 sts=2
+
+" 配色
+" 新增的行
+"hi DiffAdd    ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 cterm=reverse gui=reverse
+" 变化的行
+"hi DiffChange ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=reverse gui=reverse
+" 删除的行
+"hi DiffDelete ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse gui=reverse
+" 变化的文字
+"hi DiffText   ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse gui=reverse
+
+
