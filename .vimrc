@@ -80,6 +80,11 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+"Bundle 'bitfyre/vim-indent-html'
+"html.vim
+
+Plugin 'Chiel92/vim-autoformat'
+
 "minibufexp
 "Plugin 'fholgado/minibufexpl'
 
@@ -272,9 +277,9 @@ map <F11> :bnext<CR>
 
 let NERDTreeWinPos="right"
 map <F12> :NERDTreeToggle<CR>
-"¹Ø±ÕvimÊ±£¬Èç¹û´ò¿ªµÄÎÄ¼ş³ıÁËNERDTreeÃ»ÓĞÆäËûÎÄ¼şÊ±£¬Ëü×Ô¶¯¹Ø±Õ
+"å…³é—­vimæ—¶ï¼Œå¦‚æœæ‰“å¼€çš„æ–‡ä»¶é™¤äº†NERDTreeæ²¡æœ‰å…¶ä»–æ–‡ä»¶æ—¶ï¼Œå®ƒè‡ªåŠ¨å…³é—­
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
-"let NERDChristmasTree=1	"ÈÃÊ÷¸üºÃ¿´,ÕæĞÄÃ»·¢ÏÖ°¡
+"let NERDChristmasTree=1	"è®©æ ‘æ›´å¥½çœ‹,çœŸå¿ƒæ²¡å‘ç°å•Š
 
 "tab instead 
 set tabstop=4
@@ -287,34 +292,34 @@ set clipboard+=unnamedplus
 
 set nobackup
 set virtualedit=all
-"set cursorline              " Í»³öÏÔÊ¾µ±Ç°ĞĞ
-set ruler                   " ´ò¿ª×´Ì¬À¸±ê³ß
-"set autochdir               " ×Ô¶¯ÇĞ»»µ±Ç°Ä¿Â¼Îªµ±Ç°ÎÄ¼şËùÔÚµÄÄ¿Â¼
-"set ignorecase smartcase    " ËÑË÷Ê±ºöÂÔ´óĞ¡Ğ´£¬µ«ÔÚÓĞÒ»¸ö»òÒÔÉÏ´óĞ´×ÖÄ¸Ê±ÈÔ±£³Ö¶Ô´óĞ¡Ğ´Ãô¸Ğ
+"set cursorline              " çªå‡ºæ˜¾ç¤ºå½“å‰è¡Œ
+set ruler                   " æ‰“å¼€çŠ¶æ€æ æ ‡å°º
+"set autochdir               " è‡ªåŠ¨åˆ‡æ¢å½“å‰ç›®å½•ä¸ºå½“å‰æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•
+"set ignorecase smartcase    " æœç´¢æ—¶å¿½ç•¥å¤§å°å†™ï¼Œä½†åœ¨æœ‰ä¸€ä¸ªæˆ–ä»¥ä¸Šå¤§å†™å­—æ¯æ—¶ä»ä¿æŒå¯¹å¤§å°å†™æ•æ„Ÿ
 set nowrap
-"set nowrapscan              " ½ûÖ¹ÔÚËÑË÷µ½ÎÄ¼şÁ½¶ËÊ±ÖØĞÂËÑË÷
-set incsearch               " ÊäÈëËÑË÷ÄÚÈİÊ±¾ÍÏÔÊ¾ËÑË÷½á¹û
-set hlsearch                " ËÑË÷Ê±¸ßÁÁÏÔÊ¾±»ÕÒµ½µÄÎÄ±¾
-set guioptions-=T           " Òş²Ø¹¤¾ßÀ¸
-set guioptions-=m           " Òş²Ø²Ëµ¥À¸
-set smartindent             " ¿ªÆôĞÂĞĞÊ±Ê¹ÓÃÖÇÄÜ×Ô¶¯Ëõ½ø
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\                " ÉèÖÃÔÚ×´Ì¬ĞĞÏÔÊ¾µÄĞÅÏ¢
+"set nowrapscan              " ç¦æ­¢åœ¨æœç´¢åˆ°æ–‡ä»¶ä¸¤ç«¯æ—¶é‡æ–°æœç´¢
+set incsearch               " è¾“å…¥æœç´¢å†…å®¹æ—¶å°±æ˜¾ç¤ºæœç´¢ç»“æœ
+set hlsearch                " æœç´¢æ—¶é«˜äº®æ˜¾ç¤ºè¢«æ‰¾åˆ°çš„æ–‡æœ¬
+set guioptions-=T           " éšè—å·¥å…·æ 
+set guioptions-=m           " éšè—èœå•æ 
+set smartindent             " å¼€å¯æ–°è¡Œæ—¶ä½¿ç”¨æ™ºèƒ½è‡ªåŠ¨ç¼©è¿›
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\                " è®¾ç½®åœ¨çŠ¶æ€è¡Œæ˜¾ç¤ºçš„ä¿¡æ¯
 
-set scrolloff=3     " ¹â±êÒÆ¶¯µ½bufferµÄ¶¥²¿ºÍµ×²¿Ê±±£³Ö3ĞĞ¾àÀë
-
-"-----------------------------------------------------------------
-" plugin - NERD_commenter.vim   ×¢ÊÍ´úÂëÓÃµÄ£¬
-" [count],cc ¹â±êÒÔÏÂcountĞĞÖğĞĞÌí¼Ó×¢ÊÍ(7,cc)
-" [count],cu ¹â±êÒÔÏÂcountĞĞÖğĞĞÈ¡Ïû×¢ÊÍ(7,cu)
-" [count],cm ¹â±êÒÔÏÂcountĞĞ³¢ÊÔÌí¼Ó¿é×¢ÊÍ(7,cm)
-" ,cA ÔÚĞĞÎ²²åÈë /* */,²¢ÇÒ½øÈë²åÈëÄ£Ê½¡£ Õâ¸öÃüÁî·½±ãĞ´×¢ÊÍ¡£
-" ×¢£ºcount²ÎÊı¿ÉÑ¡£¬ÎŞÔòÄ¬ÈÏÎªÑ¡ÖĞĞĞ»òµ±Ç°ĞĞ
-"-----------------------------------------------------------------
-let NERDSpaceDelims=1       " ÈÃ×¢ÊÍ·ûÓëÓï¾äÖ®¼äÁôÒ»¸ö¿Õ¸ñ
-let NERDCompactSexyComs=1   " ¶àĞĞ×¢ÊÍÊ±Ñù×Ó¸üºÃ¿´
+set scrolloff=3     " å…‰æ ‡ç§»åŠ¨åˆ°bufferçš„é¡¶éƒ¨å’Œåº•éƒ¨æ—¶ä¿æŒ3è¡Œè·ç¦»
 
 "-----------------------------------------------------------------
-" plugin - DoxygenToolkit.vim  ÓÉ×¢ÊÍÉú³ÉÎÄµµ£¬²¢ÇÒÄÜ¹»¿ìËÙÉú³Éº¯Êı±ê×¼×¢ÊÍ
+" plugin - NERD_commenter.vim   æ³¨é‡Šä»£ç ç”¨çš„ï¼Œ
+" [count],cc å…‰æ ‡ä»¥ä¸‹countè¡Œé€è¡Œæ·»åŠ æ³¨é‡Š(7,cc)
+" [count],cu å…‰æ ‡ä»¥ä¸‹countè¡Œé€è¡Œå–æ¶ˆæ³¨é‡Š(7,cu)
+" [count],cm å…‰æ ‡ä»¥ä¸‹countè¡Œå°è¯•æ·»åŠ å—æ³¨é‡Š(7,cm)
+" ,cA åœ¨è¡Œå°¾æ’å…¥ /* */,å¹¶ä¸”è¿›å…¥æ’å…¥æ¨¡å¼ã€‚ è¿™ä¸ªå‘½ä»¤æ–¹ä¾¿å†™æ³¨é‡Šã€‚
+" æ³¨ï¼šcountå‚æ•°å¯é€‰ï¼Œæ— åˆ™é»˜è®¤ä¸ºé€‰ä¸­è¡Œæˆ–å½“å‰è¡Œ
+"-----------------------------------------------------------------
+let NERDSpaceDelims=1       " è®©æ³¨é‡Šç¬¦ä¸è¯­å¥ä¹‹é—´ç•™ä¸€ä¸ªç©ºæ ¼
+let NERDCompactSexyComs=1   " å¤šè¡Œæ³¨é‡Šæ—¶æ ·å­æ›´å¥½çœ‹
+
+"-----------------------------------------------------------------
+" plugin - DoxygenToolkit.vim  ç”±æ³¨é‡Šç”Ÿæˆæ–‡æ¡£ï¼Œå¹¶ä¸”èƒ½å¤Ÿå¿«é€Ÿç”Ÿæˆå‡½æ•°æ ‡å‡†æ³¨é‡Š
 "-----------------------------------------------------------------
 let g:DoxygenToolkit_authorName="chenhu@bmsoft.com.cn"
 let g:DoxygenToolkit_briefTag_funcName="yes"
@@ -362,11 +367,11 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
 let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
 let tagbar_left=1
 let g:tagbar_width=30
- "½«¿ªÆôtagbarµÄ¿ì½İ¼üÉèÖÃÎªtb
+ "å°†å¼€å¯tagbarçš„å¿«æ·é”®è®¾ç½®ä¸ºtb
 "nmap tb :TagbarToggle<CR>
 "nmap <Leader>t :TagbarToggle<CR>
 
-" ÔÚÄ³Ğ©Çé¿öÏÂ×Ô¶¯´ò¿ªtagbar
+" åœ¨æŸäº›æƒ…å†µä¸‹è‡ªåŠ¨æ‰“å¼€tagbar
 autocmd BufReadPost *.go,*.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 
 let g:ctrlp_map = '<c-p>'
@@ -398,17 +403,17 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 "let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme='angr'
-" tablineÖĞbufferÏÔÊ¾±àºÅ
+" tablineä¸­bufferæ˜¾ç¤ºç¼–å·
 let g:airline#extensions#tabline#buffer_nr_show = 1
-" Ê¹ÓÃpowerline´ò¹ı²¹¶¡µÄ×ÖÌå
+" ä½¿ç”¨powerlineæ‰“è¿‡è¡¥ä¸çš„å­—ä½“
 let g:airline_powerline_fonts = 1
-" Ó³ÉäÇĞ»»bufferµÄ¼üÎ»
+" æ˜ å°„åˆ‡æ¢bufferçš„é”®ä½
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
-nmap <c-m> :b#<cr>
-" ²é¿´buffers
+nmap <c-i> :b#<CR>
+" æŸ¥çœ‹buffers
 nnoremap <Leader>l :ls<CR>
-" Ó³Éä<leader>numµ½num buffer
+" æ˜ å°„<leader>numåˆ°num buffer
 map <leader>1 :b 1<CR>
 map <leader>2 :b 2<CR>
 map <leader>3 :b 3<CR>
@@ -439,9 +444,11 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
 let g:go_fmt_command = "goimports"
-
+nmap gc :GoChannelPeers<CR> 
 autocmd FileType go nmap gi <Plug>(go-info)
 autocmd FileType go nmap gr <Plug>(go-referrers)
+"autocmd FileType go nmap gc :GoReferrers<CR>
+"autocmd FileType go nmap gc :GoChannelPeers<CR>
 " :GoDef but opens in a horizontal split
 autocmd FileType go nmap gs <Plug>(go-def-split)
 " :GoDoc
@@ -476,7 +483,7 @@ nnoremap [p "0p
 set showcmd
 
 
-"À¨ºÅÅä¶Ô
+"æ‹¬å·é…å¯¹
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
@@ -488,14 +495,10 @@ map <leader>p :pwd<CR>
 
 autocmd FileType html setlocal et sta sw=2 sts=2
 
-" ÅäÉ«
-" ĞÂÔöµÄĞĞ
-"hi DiffAdd    ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 cterm=reverse gui=reverse
-" ±ä»¯µÄĞĞ
-"hi DiffChange ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=reverse gui=reverse
-" É¾³ıµÄĞĞ
-"hi DiffDelete ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse gui=reverse
-" ±ä»¯µÄÎÄ×Ö
-"hi DiffText   ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse gui=reverse
+filetype indent on
 
-
+"ä¿å­˜æ—¶è‡ªåŠ¨æ ¼å¼åŒ–htmlä»£ç 
+"au BufWrite *.html :Autoformat
+"æŒ‡å®šhtmlæ ¼å¼åŒ–å·¥å…·ï¼Œå¹¶è®¾ç½®ç¼©è¿›ä¸ºä¸¤ä¸ªç©ºæ ¼
+let g:formatdef_my_html = '"html-beautify -s 2"'
+let g:formatters_html = ['my_html']
