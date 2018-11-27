@@ -85,6 +85,10 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'Chiel92/vim-autoformat'
 
+Plugin 'tomlion/vim-solidity'
+
+Plugin 'posva/vim-vue'
+
 "minibufexp
 "Plugin 'fholgado/minibufexpl'
 
@@ -213,7 +217,7 @@ let Tlist_Display_Prototype=0
 
 "for winmanager
 let g:winManagerWindowLayout='TagList'
-let g:winManagerWidth = 40
+let g:winManagerWidth = 25
 nmap tm :WMToggle<cr>
 
 ":set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -226,7 +230,10 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 "set mouse avaliable
-set mouse=a
+"set mouse=a
+"set visual copy
+set mouse=n
+
 "set update time to 1ms
 set updatetime=1
 
@@ -366,7 +373,7 @@ set tags=tags;/
 let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
 let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
 let tagbar_left=1
-let g:tagbar_width=30
+let g:tagbar_width=25
  "将开启tagbar的快捷键设置为tb
 "nmap tb :TagbarToggle<CR>
 "nmap <Leader>t :TagbarToggle<CR>
