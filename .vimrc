@@ -78,6 +78,9 @@ Plugin 'fatih/vim-go'
 "Plugin 'tagbar'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'inkarkat/vim-ingo-library'
+Plugin 'inkarkat/vim-mark'
+
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 "Bundle 'bitfyre/vim-indent-html'
@@ -204,7 +207,8 @@ set guifont=Consolas\ Italic:h16
 "set lines=30 columns=120
 set number
 set encoding=utf-8
-set fileencodings=gbk,utf-8,cp936,cp932
+"set fileencodings=gbk,utf-8,cp936,cp932
+set fileencodings=utf-8
 let &termencoding=&encoding
 set nocp
 set cindent
@@ -470,6 +474,9 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+let g:go_highlight_function_calls = 1
+
+let g:go_def_mode = 'gopls'
 
 
 
@@ -509,3 +516,5 @@ filetype indent on
 "指定html格式化工具，并设置缩进为两个空格
 let g:formatdef_my_html = '"html-beautify -s 2"'
 let g:formatters_html = ['my_html']
+
+map <leader>s :ls<CR>
