@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufReadPost *syslog* :set filetype=messages
+autocmd BufNewFile,BufReadPost *log* :set filetype=messages
