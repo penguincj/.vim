@@ -56,6 +56,8 @@ Plugin 'mileszs/ack.vim'
 
 "Plugin 'bling/vim-bufferline'
 
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+
 " YANG
 Bundle 'nathanalderson/yang.vim'
 
@@ -260,9 +262,11 @@ let g:TagHighlightSettings['PathToPython'] = '/bin/python'
 "key mappings for each plugin
 "
 "for cscope
-map <F2> "zyiw:exe ":cs find s ".@z.""<CR>
+"map <F2> "zyiw:exe ":cs find s ".@z.""<CR>
 map <F3> "zyiw:exe ":cs find c ".@z.""<CR>
 map <F4> "zyiw:exe ":cs find g arad_pp_".@z.""<CR>
+
+set pastetoggle=<F2>
 
 "for split
 nmap <F5> :split<cr>
@@ -374,8 +378,8 @@ nnoremap ; :
 set tags=tags;/
 
 "tagbar
-let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
-let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
+"let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
+"let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
 let tagbar_left=1
 let g:tagbar_width=25
  "将开启tagbar的快捷键设置为tb
@@ -406,7 +410,7 @@ set cursorline
 
 "golang
 "complete
-imap <C-k> <C-x><C-o>
+imap <C-Space> <C-x><C-o>
 
 "airline
 set laststatus=2
@@ -518,3 +522,4 @@ let g:formatdef_my_html = '"html-beautify -s 2"'
 let g:formatters_html = ['my_html']
 
 map <leader>s :ls<CR>
+let g:go_version_warning = 0
