@@ -359,8 +359,11 @@ let g:EasyGrepCommand=1
 "set grepprg=ag\ --nogroup\ --nocolor
 "set grepprg=ag\
 map <leader>f :grep!<space>
-let g:ag_qhandler = 'copen 10'
-set grepprg=ag\ --vimgrep\ $*
+"let g:ag_qhandler = 'copen 10'
+"set grepprg=ag\ --vimgrep\ $*
+
+let g:ackprg = 'ag --vimgrep --smart-case'
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -379,7 +382,7 @@ set tags=tags;/
 
 "tagbar
 "let Tlist_Ctags_Cmd = '/usr/local/bin/my_ctags'
-"let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
+let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
 let tagbar_left=1
 let g:tagbar_width=25
  "将开启tagbar的快捷键设置为tb
