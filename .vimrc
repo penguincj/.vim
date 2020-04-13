@@ -356,14 +356,16 @@ let g:ack_qhandler = "botright copen 8"
 
 "ag
 let g:EasyGrepCommand=1
-"set grepprg=ag\ --nogroup\ --nocolor
+"let g:grepprg='ag --nogroup --nocolor --column'
+set grepprg=ag\ --nogroup\ --nocolor
 "set grepprg=ag\
 map <leader>f :grep!<space>
 "let g:ag_qhandler = 'copen 10'
 "set grepprg=ag\ --vimgrep\ $*
 
-let g:ackprg = 'ag --vimgrep --smart-case'
-"let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:ackprg = 'ag --path-to-ignore ~/.agignore --nogroup --nocolor --column'
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
