@@ -430,6 +430,7 @@ let g:airline_powerline_fonts = 1
 " 映射切换buffer的键位
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
+nmap <c-n> :b#<CR>
 " 查看buffers
 nnoremap <Leader>l :ls<CR>
 " 映射<leader>num到num buffer
