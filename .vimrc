@@ -388,11 +388,11 @@ let g:tagbar_ctags_bin='/usr/local/bin/my_ctags'
 let tagbar_left=1
 let g:tagbar_width=25
  "将开启tagbar的快捷键设置为tb
-"nmap tb :TagbarToggle<CR>
-"nmap <Leader>t :TagbarToggle<CR>
+nmap tb :TagbarToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
 
 " 在某些情况下自动打开tagbar
-autocmd BufReadPost *.go,*.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"autocmd BufReadPost *.go,*.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -528,3 +528,5 @@ let g:formatters_html = ['my_html']
 
 map <leader>s :ls<CR>
 let g:go_version_warning = 0
+
+set wrap
